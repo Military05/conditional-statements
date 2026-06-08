@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++: build active file",
+      "type": "shell",
+      "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-g3",
+        "-O0",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "detail": "Build the currently opened C++ file with GCC and debug symbols."
+    },
+    {
+      "label": "C++: run active file",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/C",
+        "chcp 65001>nul && \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+      ],
+      "dependsOn": "C++: build active file",
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Build and run the current C++ program in UTF-8 mode."
+    }
+  ]
+}
