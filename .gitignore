@@ -5,3 +5,4 @@
 *.pdb
 build/
 out/
+eval $(ssh-agent -s)*

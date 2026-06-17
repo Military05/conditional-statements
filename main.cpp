@@ -1,8 +1,13 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Gadzhi\n";
-    std::cout << 20 << "\n";
-}
+    double number;
 
-#include <iostream>
+    std::cout << "Введите число: ";
+    std::cin >> number;
+
+    std::cout << "Вы ввели:\n ";
+    std::cout << number << '\n';
+
+    return 0;
+}
