@@ -1,13 +1,57 @@
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <iostream>
 
 int main() {
-    int number;
+#ifdef _WIN32
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+#endif
+    
+    std::cout << std::boolalpha;
 
-    std::cout << "Введите число: ";
-    std::cin >> number;
+    bool first = true;
+    bool second = true;
 
-    std::cout << "Вы ввели:\n";
-    std::cout << number << '\n';
+
+    std::cout << "Оператор: ||\n";
+
+    first = true;
+    second = true;
+    std::cout << first << " " << second << " " << (first || second) << '\n';
+    
+    first = false;
+    second = true;    
+    std::cout << first << " " << second << " " << (first || second) << '\n';
+
+    first = true;
+    second = false;
+    std::cout << first << " " << second << " " << (first || second) << '\n';
+
+    first = false;
+    second = false;
+    std::cout << first << " " << second << " " << (first || second) << '\n';
+
+    std::cout << "\nОператор: &&\n";
+
+    first = true;
+    second = true;
+    std::cout << first << " " << second << " " << (first && second) << '\n';
+
+    first = false;
+    second = true;
+    std::cout << first << " " << second << " " << (first && second) << '\n';
+
+    first = true;
+    second = false;
+    std::cout << first << " " << second << " " << (first && second) << '\n';
+
+    first = false;
+    second = false;
+    std::cout << first << " " << second << " " << (first && second) << '\n';
+
 
     return 0;
 }
